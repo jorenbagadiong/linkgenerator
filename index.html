@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Link Generator</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div id="body">
+      <div class="container-fluid">
+        <div class="row py-4">
+          <div class="col-4"></div>
+          <div class="col-4 selector">
+            <label for="host" class="form-label">HOST</label>
+            <select class="form-control" id="host">
+              <option value=""></option>
+              <option value="local">local</option>
+              <option value="dev">dev</option>
+            </select>
+          </div>
+          <div class="col-4"></div>
+        </div>
+        <div class="row py-4">
+          <div class="col-4 selector">
+            <label for="host" class="form-label">MOCK</label>
+            <select class="form-control banks" id="mock">
+              <option value=""></option>
+              <option value="mock">mock</option>
+            </select>
+          </div>
+          <div class="col-4 selector">
+            <label for="host" class="form-label">INR BANKS</label>
+            <select class="form-control banks" id="inrBank">
+              <option value=""></option>
+              <option value="axis">axis</option>
+              <option value="brda">brda</option>
+              <option value="canbk">canbk</option>
+              <option value="hdfc">hdfc</option>
+              <option value="icici">icici</option>
+              <option value="idbi">idbi</option>
+              <option value="indu">indu</option>
+              <option value="kotak">kotak</option>
+              <option value="kotbk">kotbk</option>
+              <option value="pnjb">pnjb</option>
+              <option value="sbi">sbi</option>
+              <option value="yesb">yesb</option>
+            </select>
+          </div>
+          <div class="col-4 selector">
+            <label for="host" class="form-label">MYR BANKS</label>
+            <select class="form-control banks" id="myrBank">
+              <option value=""></option>
+              <option value="my_amb">my_amb</option>
+              <option value="my_cimb">my_cimb</option>
+              <option value="my_hlb">my_hlb</option>
+              <option value="my_hsbc">my_hsbc</option>
+              <option value="my_mayb">my_mayb</option>
+              <option value="my_ocbc">my_ocbc</option>
+              <option value="my_public">my_public</option>
+              <option value="my_rhb">my_rhb</option>
+              <option value="my_uobib">my_uobib</option>
+            </select>
+          </div>
+        </div>
+        <div class="row py-4">
+          <div class="col-4 selector">
+            <label for="host" class="form-label">THB BANKS</label>
+            <select class="form-control banks" id="thbBank">
+              <option value=""></option>
+              <option value="axis">th_bangkok</option>
+              <option value="brda">th_governmentsavings</option>
+              <option value="canbk">th_kasikorn</option>
+              <option value="hdfc">th_krungthai</option>
+              <option value="icici">th_krungsri</option>
+              <option value="idbi">th_siam</option>
+              <option value="indu">th_ttbdirect</option>
+              <option value="kotak">th_uobt</option>
+            </select>
+          </div>
+          <div class="col-4 selector">
+            <label for="host" class="form-label">VND BANKS</label>
+            <select class="form-control banks" id="vndBank">
+              <option value=""></option>
+              <option value="vn_acb">vn_acb</option>
+              <option value="vn_bidv">vn_bidv</option>
+              <option value="vn_donga">vn_donga</option>
+              <option value="vn_exim">vn_exim</option>
+              <option value="vn_sacom">vn_sacom</option>
+              <option value="vn_techcom">vn_techcom</option>
+              <option value="vn_tp">vn_tp</option>
+              <option value="vn_vietcom">vn_vietcom</option>
+              <option value="vn_vietin">vn_vietin</option>
+              <option value="vn_vp">vn_vp</option>
+            </select>
+          </div>
+          <div class="col-4 selector">
+            <label for="host" class="form-label">ZAR BANKS</label>
+            <select class="form-control banks" id="zarBank">
+              <option value=""></option>
+              <option value="za_absa">za_absa</option>
+              <option value="za_capitec">za_capitec</option>
+              <option value="za_fnb">za_fnb</option>
+              <option value="za_standard">za_standard</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="app.js"></script>
+  </body>
+</html>
