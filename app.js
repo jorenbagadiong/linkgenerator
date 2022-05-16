@@ -51,11 +51,91 @@ const VND_BANKS = [
 
 const ZAR_BANKS = ["za_absa", "za_capitec", "za_fnb", "za_standard"];
 
+const PAYEES = [
+  {
+    code: "mock",
+    value: "mock",
+    selected: true,
+  },
+  {
+    code: "ICICI",
+    value: "TEST01",
+  },
+  {
+    code: "HDFC",
+    value: "HDFC01",
+  },
+  {
+    code: "KOTAK - No MMID",
+    value: "KOTAK01",
+  },
+  {
+    code: "Public Bank",
+    value: "MALTEST3",
+  },
+  {
+    code: "AMBank",
+    value: "MALTEST2",
+  },
+  {
+    code: "OCBC",
+    value: "MALTEST1",
+  },
+  {
+    code: "TTBDirect",
+    value: "TEST_TTB",
+  },
+  {
+    code: "Bangkok Bank",
+    value: "TEST_BANGKOK",
+  },
+  {
+    code: "Government Saving Bank",
+    value: "TEST_GSB",
+  },
+  {
+    code: "ACB",
+    value: "TEST_VIET_ACB",
+  },
+  {
+    code: "SACOM",
+    value: "TEST_VIET_SACOM",
+  },
+  {
+    code: "TECHCOM",
+    value: "TEST_VIET_TECHCOM",
+  },
+  {
+    code: "ABSA",
+    value: "TEST_ABSA",
+  },
+  {
+    code: "CAPITEC",
+    value: "TEST_ABSA",
+  },
+  {
+    code: "FNB",
+    value: "TEST_FNB",
+  },
+  {
+    code: "STANDARD",
+    value: "TEST_STANDARD",
+  },
+];
+
 $(document).ready(function () {
   loadBanks();
 });
 
 function loadBanks() {
+  PAYEES.map((payee) => {
+    $("#payees").append(
+      `<option value="${payee.value}" ${payee.selected ? "selected" : ""}>${
+        payee.code
+      }</option>`
+    );
+  });
+
   INR_BANKS.map((bank) => {
     $("#inrBank").append(`<option value="${bank}">${bank}</option>`);
   });
@@ -115,6 +195,8 @@ function getPaymentReference(currency, bank) {
   const host = $("#host").val();
   const date = new Date();
   const paymentReference = date.getTime();
+  const amount = $("#amount").val();
+  const payee = $("#payees").val();
   let url;
 
   if (!host) {
@@ -123,36 +205,15 @@ function getPaymentReference(currency, bank) {
   }
 
   if (host === "local") {
-    url =
-      "http://localhost:3050/start/" +
-      bank +
-      "?amount=100&accountNumber=mock&paymentReference=" +
-      paymentReference +
-      "&returnUrl=https://www.google.com&accountName=someName&currency=" +
-      currency +
-      "&merchantCode=mc&expiryTime=2023-01-01T00:00:00.000Z&payOrderId=123422";
+    url = `http://localhost:3050/start/${bank}?amount=${amount}&accountNumber=${payee}&paymentReference=${paymentReference}&returnUrl=https://www.google.com&accountName=someName&currency=${currency}&merchantCode=mc&expiryTime=2023-01-01T00:00:00.000Z&payOrderId=123422`;
   }
 
   if (host === "dev") {
-    url =
-      "https://puppeteer.dev.carpentum.tech/start/" +
-      bank +
-      "?amount=100&accountNumber=mock&paymentReference=" +
-      paymentReference +
-      "&returnUrl=https://www.google.com&accountName=someName&currency=" +
-      currency +
-      "&merchantCode=mc&expiryTime=2023-01-01T00:00:00.000Z&payOrderId=55669988";
+    url = `https://puppeteer.dev.carpentum.tech/start/${bank}?amount=${amount}&accountNumber=${payee}&paymentReference=${paymentReference}&returnUrl=https://www.google.com&accountName=someName&currency=${currency}&merchantCode=mc&expiryTime=2023-01-01T00:00:00.000Z&payOrderId=123422`;
   }
 
   if (host === "stable") {
-    url =
-      "https://puppeteer.stable.carpentum.tech/start/" +
-      bank +
-      "?amount=100&accountNumber=mock&paymentReference=" +
-      paymentReference +
-      "&returnUrl=https://www.google.com&accountName=someName&currency=" +
-      currency +
-      "&merchantCode=mc&expiryTime=2023-01-01T00:00:00.000Z&payOrderId=55669988";
+    url = `https://puppeteer.stable.carpentum.tech/start/${bank}?amount=${amount}&accountNumber=${payee}&paymentReference=${paymentReference}&returnUrl=https://www.google.com&accountName=someName&currency=${currency}&merchantCode=mc&expiryTime=2023-01-01T00:00:00.000Z&payOrderId=123422`;
   }
 
   window.open(url, "_blank");

@@ -8,10 +8,6 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -20,7 +16,6 @@
       <div id="generator">
         <div class="container-fluid">
           <div class="row py-4">
-            <div class="col-4"></div>
             <div class="col-4 selector">
               <label for="host" class="form-label">HOST</label>
               <select class="form-select" id="host">
@@ -30,7 +25,16 @@
                 <option value="stable">stable</option>
               </select>
             </div>
-            <div class="col-4"></div>
+            <div class="col-4">
+              <label for="host" class="form-label">AMOUNT</label>
+              <input class="form-control" id="amount" value="100" />
+            </div>
+            <div class="col-4">
+              <label for="host" class="form-label">PAYEE</label>
+              <select class="form-select" id="payees">
+                <option value=""></option>
+              </select>
+            </div>
           </div>
           <div class="row py-4">
             <div class="col-4 selector">
