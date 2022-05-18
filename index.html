@@ -8,9 +8,46 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="color-switcher">
+      <div class="switcher-btn">
+        <i class="fas fa-cog"></i>
+      </div>
+      <div class="theme-buttons-container">
+        <span class="theme-button" data-color="dark" style="background-color: #121211"></span>
+        <span class="theme-button" data-color="light" style="background-color: #f0f4fa"></span>
+        <span
+          class="theme-button"
+          data-color="gradient"
+          style="
+            background: linear-gradient(
+                217deg,
+                rgba(255, 0, 0, 0.8),
+                rgba(255, 0, 0, 0) 70.71%
+              ),
+              linear-gradient(
+                127deg,
+                rgba(0, 255, 0, 0.8),
+                rgba(0, 255, 0, 0) 70.71%
+              ),
+              linear-gradient(
+                336deg,
+                rgba(0, 0, 255, 0.8),
+                rgba(0, 0, 255, 0) 70.71%
+              );
+          "
+        ></span>
+      </div>
+    </div>
     <div id="body">
       <label id="title">Puppeteer Link Generator</label>
       <div id="generator">
@@ -94,3 +131,10 @@
     <script src="app.js"></script>
   </body>
 </html>
+<!-- background: linear-gradient(
+      217deg,
+      rgba(255, 0, 0, 0.8),
+      rgba(255, 0, 0, 0) 70.71%
+    ),
+    linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%),
+    linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%) -->

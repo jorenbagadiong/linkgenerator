@@ -1,3 +1,16 @@
+$(document).ready(function () {
+  theme();
+});
+
+function theme() {
+  const theme = localStorage.getItem("theme");
+  if (!theme) {
+    localStorage.setItem("theme", "light");
+  }
+
+  themeChanger();
+}
+
 const INR_BANKS = [
   "axis",
   "brda",
@@ -111,7 +124,7 @@ const PAYEES = [
   },
   {
     code: "CAPITEC",
-    value: "TEST_ABSA",
+    value: "TEST_CAPITEC",
   },
   {
     code: "FNB",
@@ -218,4 +231,44 @@ function getPaymentReference(currency, bank) {
 
   window.open(url, "_blank");
   $(".banks").val("");
+}
+
+$(".switcher-btn").click(function () {
+  $(this).toggleClass("active");
+  if ($(this).hasClass("active")) {
+    $(".theme-buttons-container").show();
+  } else {
+    $(".theme-buttons-container").hide();
+  }
+});
+
+$(".theme-button").click(function () {
+  const theme = $(this).attr("data-color");
+  localStorage.setItem("theme", theme);
+  themeChanger();
+});
+
+function themeChanger() {
+  const theme = localStorage.getItem("theme");
+
+  if (theme === "dark") {
+    $(":root").css("--backGround", "#040414");
+    $(":root").css("--fontColor", "#fff");
+    $(":root").css("--borderColor", "#fff");
+  }
+
+  if (theme === "light") {
+    $(":root").css("--backGround", "#fff");
+    $(":root").css("--fontColor", "#4d4d4d");
+    $(":root").css("--borderColor", "#4d4d4d");
+  }
+
+  if (theme === "gradient") {
+    $(":root").css(
+      "--backGround",
+      "linear-gradient(217deg,rgba(255, 0, 0, 0.8),rgba(255, 0, 0, 0) 70.71%),linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%),linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%)"
+    );
+    $(":root").css("--fontColor", "#fff");
+    $(":root").css("--borderColor", "#fff");
+  }
 }
