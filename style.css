@@ -59,44 +59,52 @@ input {
 .color-switcher {
   position: fixed;
   top: 26px;
-  right: 0;
-  width: 150px;
-  padding: 10px;
-  background-color: #fff;
+  right: 10px;
+  padding: 5px 10px;
+  background-color: #ffffff;
   z-index: 1000;
-}
-
-.color-switcher h3 {
-  color: var(--main-color);
-  font-size: 20px;
-  margin-bottom: 10px;
-  border-bottom: 1px solid #3333;
-  padding: 5px 0;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  border: 1px solid var(--borderColor);
 }
 
 .color-switcher .switcher-btn {
-  position: absolute;
-  top: 0;
-  left: -70px;
-  color: var(--main-color);
-  background: #fff;
-  padding: 10px 20px;
+  color: #999999;
   cursor: pointer;
-  font-size: 30px;
+  font-size: 20px;
 }
 
 .color-switcher .theme-buttons-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: none;
 }
 
-.color-switcher .theme-buttons-container .theme-buttons {
+.color-switcher .theme-buttons-container .theme-button {
   display: block;
-  height: 30px;
-  width: 30px;
+  height: 20px;
+  width: 20px;
   border-radius: 50%;
-  margin: 5px;
+  margin-bottom: 10px;
   cursor: pointer;
+  border: 1px solid #d9d9d9;
+}
+
+.theme-button.dark {
+  background-color: #121211;
+}
+
+.theme-button.light {
+  background-color: #f0f4fa;
+}
+
+.theme-button.gradient {
+  background: linear-gradient(
+      217deg,
+      rgba(255, 0, 0, 0.8),
+      rgba(255, 0, 0, 0) 70.71%
+    ),
+    linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%),
+    linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%);
 }
