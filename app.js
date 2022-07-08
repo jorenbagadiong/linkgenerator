@@ -222,11 +222,13 @@ function getPaymentReference(currency, bank) {
   }
 
   if (host === "dev") {
-    url = `https://puppeteer.dev.carpentum.tech/start/${bank}?amount=${amount}&accountNumber=${payee}&paymentReference=${paymentReference}&returnUrl=https://www.google.com&accountName=someName&currency=${currency}&merchantCode=mc&expiryTime=2023-01-01T00:00:00.000Z&payOrderId=123422`;
-  }
-
-  if (host === "stable") {
-    url = `https://puppeteer.stable.carpentum.tech/start/${bank}?amount=${amount}&accountNumber=${payee}&paymentReference=${paymentReference}&returnUrl=https://www.google.com&accountName=someName&currency=${currency}&merchantCode=mc&expiryTime=2023-01-01T00:00:00.000Z&payOrderId=123422`;
+    if (currency === "MYR") {
+      url = `https://puppeteer.dev.transtech.one/start/${bank}?amount=${amount}&accountNumber=${payee}&paymentReference=${paymentReference}&returnUrl=https://www.google.com&accountName=someName&currency=${currency}&merchantCode=mc&expiryTime=2023-01-01T00:00:00.000Z&payOrderId=123422`;
+    } else if (currency === "ZAR") {
+      url = `https://puppeteer.dev.spinpay.in/start/${bank}?amount=${amount}&accountNumber=${payee}&paymentReference=${paymentReference}&returnUrl=https://www.google.com&accountName=someName&currency=${currency}&merchantCode=mc&expiryTime=2023-01-01T00:00:00.000Z&payOrderId=123422`;
+    } else {
+      url = `https://puppeteer.dev.carpentum.tech/start/${bank}?amount=${amount}&accountNumber=${payee}&paymentReference=${paymentReference}&returnUrl=https://www.google.com&accountName=someName&currency=${currency}&merchantCode=mc&expiryTime=2023-01-01T00:00:00.000Z&payOrderId=123422`;
+    }
   }
 
   window.open(url, "_blank");
